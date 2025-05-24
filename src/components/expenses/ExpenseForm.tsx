@@ -102,7 +102,7 @@ export function ExpenseForm({ expense, onSuccess, onCancel }: ExpenseFormProps) 
           value={formData.title}
           onChange={handleChange}
           required
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
           placeholder="Enter expense title"
         />
       </div>
@@ -120,7 +120,7 @@ export function ExpenseForm({ expense, onSuccess, onCancel }: ExpenseFormProps) 
           required
           min="0"
           step="0.01"
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
           placeholder="0.00"
         />
       </div>
@@ -135,7 +135,7 @@ export function ExpenseForm({ expense, onSuccess, onCancel }: ExpenseFormProps) 
           value={formData.category}
           onChange={handleChange}
           required
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
         >
           {Object.entries(categoryConfig).map(([key, config]) => (
             <option key={key} value={key}>
@@ -156,7 +156,7 @@ export function ExpenseForm({ expense, onSuccess, onCancel }: ExpenseFormProps) 
           value={formData.date}
           onChange={handleChange}
           required
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
         />
       </div>
 
@@ -170,7 +170,7 @@ export function ExpenseForm({ expense, onSuccess, onCancel }: ExpenseFormProps) 
           value={formData.description}
           onChange={handleChange}
           rows={3}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
           placeholder="Optional description"
         />
       </div>
@@ -185,7 +185,7 @@ export function ExpenseForm({ expense, onSuccess, onCancel }: ExpenseFormProps) 
           name="location"
           value={formData.location}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
           placeholder="Where did you make this expense?"
         />
       </div>
@@ -200,7 +200,7 @@ export function ExpenseForm({ expense, onSuccess, onCancel }: ExpenseFormProps) 
           name="tags"
           value={formData.tags}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
           placeholder="Enter tags separated by commas"
         />
       </div>
