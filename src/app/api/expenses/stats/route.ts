@@ -56,19 +56,18 @@ export async function GET(request: NextRequest) {
       Array<{ month: string; total: number }>
     >`
       SELECT 
-        strftime('%Y-%m', date) as month,
+        TO_CHAR(date, 'YYYY-MM') as month,
         SUM(amount) as total
       FROM expenses 
       WHERE date >= ${oneYearAgo}
-      GROUP BY strftime('%Y-%m', date)
+      GROUP BY TO_CHAR(date, 'YYYY-MM')
       ORDER BY month DESC
       LIMIT 12
     `;
 
     // Calculate average expense
-    const averageExpense = expenseCount > 0 
-      ? (totalExpenses._sum.amount || 0) / expenseCount 
-      : 0;
+    const averageExpense =
+      expenseCount > 0 ? (totalExpenses._sum.amount || 0) / expenseCount : 0;
 
     // Get highest expense
     const highestExpense = await prisma.expense.findFirst({
@@ -79,12 +78,12 @@ export async function GET(request: NextRequest) {
     });
 
     // Format category data
-    const categoryData = expensesByCategory.map((item) => ({
+    const categoryData = expensesByCategory.map(item => ({
       category: item.category,
       total: item._sum.amount || 0,
       count: item._count._all,
-      percentage: totalExpenses._sum.amount 
-        ? ((item._sum.amount || 0) / (totalExpenses._sum.amount || 1)) * 100 
+      percentage: totalExpenses._sum.amount
+        ? ((item._sum.amount || 0) / (totalExpenses._sum.amount || 1)) * 100
         : 0,
     }));
 
