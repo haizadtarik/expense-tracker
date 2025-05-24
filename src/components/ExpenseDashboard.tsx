@@ -5,7 +5,7 @@ import { ExpenseForm } from '@/components/expenses/ExpenseForm';
 import { ExpenseList } from '@/components/expenses/ExpenseList';
 import { ExpenseStats } from '@/components/expenses/ExpenseStats';
 import { Expense, ExpenseFilters as ExpenseFiltersType } from '@/types/expense';
-import { useEffect, useState, useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 interface ExpenseStats {
   summary: {
