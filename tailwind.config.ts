@@ -49,7 +49,6 @@ export default {
           700: "#15803d",
           800: "#166534",
           900: "#14532d",
-          950: "#052e16",
         },
         warning: {
           50: "#fffbeb",
@@ -62,9 +61,8 @@ export default {
           700: "#b45309",
           800: "#92400e",
           900: "#78350f",
-          950: "#451a03",
         },
-        error: {
+        danger: {
           50: "#fef2f2",
           100: "#fee2e2",
           200: "#fecaca",
@@ -75,55 +73,29 @@ export default {
           700: "#b91c1c",
           800: "#991b1b",
           900: "#7f1d1d",
-          950: "#450a0a",
         },
-        // Category-specific colors
-        food: "#f59e0b",
-        transport: "#3b82f6",
-        entertainment: "#8b5cf6",
-        shopping: "#ec4899",
-        health: "#22c55e",
-        utilities: "#64748b",
-        other: "#6b7280",
-      },
-      spacing: {
-        '18': '4.5rem',
-        '88': '22rem',
-        '128': '32rem',
-      },
-      fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'Consolas', 'monospace'],
-      },
-      borderRadius: {
-        '4xl': '2rem',
       },
       boxShadow: {
-        'expense-card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-        'expense-card-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        "expense-card": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+        "expense-card-hover": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+        "expense-form": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+      },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"],
       },
       animation: {
-        'fade-in': 'fadeIn 0.5s ease-in-out',
-        'slide-up': 'slideUp 0.3s ease-out',
-        'bounce-subtle': 'bounceSubtle 2s infinite',
+        "fade-in": "fadeIn 0.3s ease-out",
       },
       keyframes: {
         fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        slideUp: {
-          '0%': { transform: 'translateY(10px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
-        },
-        bounceSubtle: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-5px)' },
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
+    require("@tailwindcss/typography"),
   ],
 } satisfies Config;

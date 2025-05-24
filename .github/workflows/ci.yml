@@ -1,0 +1,15 @@
+# CI/CD Workflow (Will be implemented in Step 23)
+# This placeholder ensures the directory structure is in place
+name: CI/CD Pipeline
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  placeholder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Placeholder
+        run: echo "CI/CD pipeline will be implemented in Step 23"

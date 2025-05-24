@@ -92,3 +92,5 @@ playwright/.cache/
 
 # documentation
 /docs/build
+
+/src/generated/prisma

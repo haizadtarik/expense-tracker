@@ -1,0 +1,44 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum ExpenseCategory {
+  FOOD
+  TRANSPORT
+  ENTERTAINMENT
+  UTILITIES
+  HEALTHCARE
+  SHOPPING
+  EDUCATION
+  TRAVEL
+  BUSINESS
+  OTHER
+}
+
+model Expense {
+  id          String          @id @default(cuid())
+  title       String
+  description String?
+  amount      Float
+  category    ExpenseCategory
+  date        DateTime        @default(now())
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+  
+  // Optional fields for future enhancements
+  receipt     String?         // File path or URL to receipt image
+  location    String?         // Where the expense occurred
+  tags        String?         // Comma-separated tags for additional categorization
+  isRecurring Boolean         @default(false)
+  
+  @@map("expenses")
+}

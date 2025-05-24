@@ -72,6 +72,22 @@ body {
     @apply text-success-600 hover:text-success-700 dark:text-success-400 dark:hover:text-success-300;
   }
 
+  /* Animation classes */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
   /* Expense category colors */
   .category-food { @apply bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200; }
   .category-transport { @apply bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200; }
