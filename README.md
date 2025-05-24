@@ -66,15 +66,36 @@ A modern, full-stack expense tracking application built with Next.js 15, TypeScr
 
 ## Deployment
 
-This project is optimized for Vercel deployment. See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
+This project is optimized for Vercel deployment with PostgreSQL database. 
+
+### Important: Database Requirements
+
+- **Local Development**: Uses PostgreSQL (recommended) or SQLite
+- **Production**: **Must use PostgreSQL** (SQLite doesn't work on Vercel)
 
 ### Quick Deploy to Vercel
 
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Set up a production database (PlanetScale, Supabase, etc.)
-4. Configure `DATABASE_URL` environment variable
-5. Deploy!
+1. **Set up Supabase Database** (Free):
+   - Go to [supabase.com](https://supabase.com) and create a project
+   - Copy your `DATABASE_URL` from Settings → Database
+
+2. **Deploy to Vercel**:
+   ```bash
+   npm run deploy
+   ```
+
+3. **Configure Vercel Environment Variables**:
+   - Go to Vercel Dashboard → Your Project → Settings → Environment Variables
+   - Add: `DATABASE_URL` = your Supabase connection string
+
+4. **Initialize Production Database**:
+   ```bash
+   # After deployment, run these commands:
+   npx prisma migrate deploy    # Set up database schema
+   npx prisma db seed          # Add sample data (optional)
+   ```
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
 
 ## Project Structure
 

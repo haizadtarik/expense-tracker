@@ -18,10 +18,12 @@
     "test:coverage": "echo \"Test coverage will be added\"",
     "test:e2e": "echo \"E2E tests will be added\"",
     "db:migrate": "prisma migrate dev",
+    "db:migrate:deploy": "prisma migrate deploy",
     "db:reset": "prisma migrate reset",
     "db:seed": "prisma db seed",
     "db:studio": "prisma studio",
-    "db:generate": "prisma generate"
+    "db:generate": "prisma generate",
+    "deploy": "./deploy.sh"
   },
   "lint-staged": {
     "src/**/*.{js,ts,jsx,tsx}": [
